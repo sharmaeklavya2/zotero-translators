@@ -18,7 +18,7 @@
     },
     "inRepository": true,
     "translatorType": 2,
-    "lastUpdated": "2025-07-09 18:55:15"
+    "lastUpdated": "2025-07-09 19:48:30"
 }
 
 var zotero2bibtexTypeMap = {
@@ -107,7 +107,8 @@ function getBibInfo(item) {
 
     // doi or url
     if(isArxivPaper && item.archiveID) {
-        data.eprint = item.archiveID;
+        data.eprint = item.archiveID.toLowerCase().startsWith('arxiv:') ?
+            item.archiveID.slice(6) : item.archiveID;
         data.archivePrefix = 'arXiv';
     }
     else if(item.DOI) {data.doi = item.DOI;}
