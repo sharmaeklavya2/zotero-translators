@@ -18,7 +18,7 @@
     },
     "inRepository": true,
     "translatorType": 2,
-    "lastUpdated": "2025-07-07 20:54:29"
+    "lastUpdated": "2025-07-09 18:55:15"
 }
 
 var zotero2bibtexTypeMap = {
@@ -75,7 +75,7 @@ function getBibInfo(item) {
             authors.push(authorFullName);
         }
     }
-    data.authors = authors.join(' and ');
+    data.author = authors.join(' and ');
 
     // create label
     const year = (item.date) ? getYearFromDate(item.date) : '';
